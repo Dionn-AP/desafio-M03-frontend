@@ -1,0 +1,105 @@
+.card-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 70px;
+}
+
+.container-content-register {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    height: 100vh;
+    width: calc(100% - 330px);
+    font-family: 'Rubik', sans-serif;
+    font-style: normal;
+    color: #ffffff;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-height: 620px;
+    background-color: #ffffff;
+    padding: 48px 30px 50px;
+    font-family: 'Rubik', sans-serif;
+}
+
+.card-login h2 {
+    color: #7978D9;
+    margin-bottom: 40px;
+    font-style: normal;
+}
+
+.card-login label {
+    color: #484848;
+    margin-bottom: 8px;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-name {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-email {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-password {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-password-confirm {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs input {
+    all: unset;
+    border:  1px solid #555555;
+    color: #555555;
+    border-radius: 5px;
+    padding: 3px 10px;
+    height: 40px;
+    width: 320px;
+    margin-bottom: 30px;
+}
+
+.card-login button {
+    all: unset;
+    border-radius: 5px;
+    padding: 14px 10px;
+    width: 320px;
+    text-align: center;
+    margin-bottom: 12px;
+    background-color: #7978D9;
+    cursor: pointer;
+}
+
+.inputs input:focus {
+    border: 1px solid #7978D9;
+}
+
+form span {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #7B61FF;
+    margin-top: 5px;
+}
