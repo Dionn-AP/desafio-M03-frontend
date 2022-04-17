@@ -10,7 +10,6 @@ root.render(
     <BrowserRouter tab='index'>
         <MainRoutes tab="index" />
     </BrowserRouter>
-    
 );
 
 

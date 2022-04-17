@@ -42,6 +42,7 @@
     padding: 12px;
     border-radius: 5px;
 }
+
 .card-add-register input:focus {
     border: 1px solid rgb(36, 35, 35);
 }
@@ -59,10 +60,6 @@
     margin-bottom: 36px;
 }
 
-/* .btn-received:hover, .btn-received:active {
-    background-color: #3A9FF1;
-} */
-
 .register-buttons div {
     text-align: center;
     padding: 15px;
@@ -73,7 +70,6 @@
     font-size: 14px;
     line-height: 17px;
     cursor: pointer;
-    /* background-color: #B9B9B9;background-color: #B9B9B9; */
 }
 
 .btn-received {
@@ -135,7 +131,7 @@ option:hover {
     margin-bottom: 20px;
 }
 
-.btn-confirm-add-register{
+.btn-confirm-add-register {
     all: unset;
     border-radius: 5px;
     color: #fff;

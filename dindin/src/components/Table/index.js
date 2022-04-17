@@ -4,6 +4,7 @@ import { format } from 'date-fns';
 import PopPup from '../../components/PopPup';
 import './style.css';
 
+
 function Table({ transactions, showIcons, setShowIcons, deleteTransaction, setShowEdit }) {
 
     const headTable = ['Data', 'Dia da Semana', 'Descrição', 'Categoria', 'Valor', ''];

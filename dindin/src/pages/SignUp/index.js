@@ -19,9 +19,7 @@ function SignUp() {
     const navigate = useNavigate();
 
     function handleChangeInputValue(e) {
-
         setForm({ ...form, [e.target.name]: e.target.value })
-
     }
 
     async function handleSubmit(e) {
@@ -39,14 +37,13 @@ function SignUp() {
                 email: form.email,
                 senha: form.senha
             });
+            
             if (response) {
                 setRegister(true)
             }
-            console.log(response.data)
 
         } catch (error) {
             setErro(error.response.data.mensagem)
-            console.log(error.response.data)
         }
     }
 

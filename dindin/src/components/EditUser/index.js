@@ -1,13 +1,11 @@
 import './style.css';
-import { useNavigate } from 'react-router-dom';
 import api from '../../services/api';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { getItem } from '../../utils/storage';
 import Close from '../../assets/close.svg';
 
 
 function EditUser({ setShowEditUser, lodaUser }) {
-    const [register, setRegister] = useState(false);
     const [erro, setErro] = useState('');
     const [form, setForm] = useState({
         nome: '',
@@ -24,9 +22,7 @@ function EditUser({ setShowEditUser, lodaUser }) {
     }
 
     function handleChangeInputValue(e) {
-
         setForm({ ...form, [e.target.name]: e.target.value })
-
     }
 
     async function handleSubmit(e) {
@@ -47,7 +43,7 @@ function EditUser({ setShowEditUser, lodaUser }) {
             if (response) {
                 setShowEditUser(false)
             }
-            
+
             lodaUser()
 
         } catch (error) {

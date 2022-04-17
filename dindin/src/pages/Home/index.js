@@ -74,7 +74,7 @@ function Home() {
             setBalance(response.data);
 
         } catch (error) {
-
+            return
         }
     }
 
@@ -85,7 +85,7 @@ function Home() {
             loadBalance();
             lodaTransactions()
         } catch (error) {
-            
+            return
         }
     }
 
@@ -156,7 +156,7 @@ function Home() {
 
                     <div className='container-table'>
 
-                        <Table 
+                        <Table
                             transactions={transactions}
                             setTransactions={setTransactions}
                             showIcons={showIcons}
@@ -167,8 +167,8 @@ function Home() {
 
                     </div>
                     <div className='card-abstract'>
-                        
-                        <Balance 
+
+                        <Balance
                             balance={balance}
                             setShowRegister={setShowRegister}
                         />

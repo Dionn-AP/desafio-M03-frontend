@@ -92,7 +92,7 @@ footer {
 .filter-table button {
     all: unset;
     display: flex;
-    background-color:#FAFAFA;
+    background-color: #FAFAFA;
     border-radius: 10px;
     font-weight: 700;
     align-items: center;

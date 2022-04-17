@@ -10,15 +10,16 @@ function ProtectedRoutes({ redirectTo }) {
   const autorization = getItem('token');
 
   return autorization ? <Outlet /> : <Navigate to={redirectTo} />
-  
+
 }
 
 function MainRoutes() {
 
   return (
     <div className="container">
-    
+
       <Routes>
+        
         <Route path='/'>
           <Route path='/' element={<SignIn />} />
           <Route path='/sign-in' element={<SignIn />} />
@@ -29,7 +30,7 @@ function MainRoutes() {
         <Route element={<ProtectedRoutes redirectTo='/' />}>
           <Route path='/home' element={<Home />} />
         </Route>
-        
+
       </Routes>
 
     </div>

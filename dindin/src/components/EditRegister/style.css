@@ -42,6 +42,7 @@
     padding: 12px;
     border-radius: 5px;
 }
+
 .edit-register input:focus {
     border: 1px solid rgb(36, 35, 35);
 }

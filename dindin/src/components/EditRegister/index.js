@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import api from '../../services/api';
 import Close from '../../assets/close.svg';
 
+
 function EditRegister({ lodaTransactions, loadBalance, setShowEdit, showEdit }) {
     const [types, setTypes] = useState('saida');
     const [erro, setErro] = useState('');
@@ -54,7 +55,7 @@ function EditRegister({ lodaTransactions, loadBalance, setShowEdit, showEdit }) 
         e.preventDefault();
 
         try {
-    
+
             const response = await api.put(`/transacao/${showEdit.id}`, {
                 tipo: types,
                 valor: Number(form.valor),
@@ -63,17 +64,16 @@ function EditRegister({ lodaTransactions, loadBalance, setShowEdit, showEdit }) 
                 descricao: form.descricao
             }, headers);
 
-            if(response) { setErro('') }
+            if (response) { setErro('') }
 
             lodaTransactions();
             loadBalance();
 
         } catch (error) {
-            setErro(error.response.data.mensagem)
-
+            setErro(error.response.data.mensagem);
         }
     }
-    
+
 
     return (
         <form className='edit-register' onSubmit={handleSubmit}>
@@ -84,13 +84,13 @@ function EditRegister({ lodaTransactions, loadBalance, setShowEdit, showEdit }) 
             />
 
             <div className='register-buttons'>
-                <div style={{backgroundColor:  types === 'entrada' && '#3A9FF1'}} 
+                <div style={{ backgroundColor: types === 'entrada' && '#3A9FF1' }}
                     className='btn-received'
                     onClick={() => setTypes('entrada')}
                 >
                     Entrada
                 </div>
-                <div style={{backgroundColor:  types === 'entrada' && '#B9B9B9'}}
+                <div style={{ backgroundColor: types === 'entrada' && '#B9B9B9' }}
                     className='btn-exits'
                     onClick={() => setTypes('saida')}
                 >

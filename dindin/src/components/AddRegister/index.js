@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import api from '../../services/api';
 import Close from '../../assets/close.svg';
 
+
 function AddRegister({ lodaTransactions, loadBalance, setShowRegister }) {
     const [types, setTypes] = useState('saida');
     const [erro, setErro] = useState('');
@@ -78,13 +79,13 @@ function AddRegister({ lodaTransactions, loadBalance, setShowRegister }) {
             />
 
             <div className='register-buttons'>
-            <div style={{backgroundColor:  types === 'entrada' && '#3A9FF1'}}
-                className='btn-received'
+                <div style={{ backgroundColor: types === 'entrada' && '#3A9FF1' }}
+                    className='btn-received'
                     onClick={() => setTypes('entrada')}
                 >
                     Entrada
                 </div>
-                <div style={{backgroundColor:  types === 'entrada' && '#B9B9B9'}}
+                <div style={{ backgroundColor: types === 'entrada' && '#B9B9B9' }}
                     className='btn-exits'
                     onClick={() => setTypes('saida')}
                 >

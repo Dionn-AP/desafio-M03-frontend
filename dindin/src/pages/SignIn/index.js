@@ -2,42 +2,41 @@ import './style.css';
 import { Link, useNavigate } from 'react-router-dom';
 import Background from '../../assets/background.svg'
 import Logo from '../../assets/logo.svg';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import api from '../../services/api';
-import { setItem, getItem } from '../../utils/storage';
+import { setItem } from '../../utils/storage';
 
 
 function SignIn() {
     const navigate = useNavigate();
-    const [ erro, setErro ] = useState('');
-    const [ form, setForm ] = useState({
+    const [erro, setErro] = useState('');
+    const [form, setForm] = useState({
         email: '',
         senha: ''
     });
 
     function handleChangeInputValue(e) {
-
-        setForm({...form, [e.target.name]: e.target.value})
+        setForm({ ...form, [e.target.name]: e.target.value })
     }
 
     async function handleSubmit(e) {
         e.preventDefault();
 
         try {
-          const response = await api.post('/login', {
-            ...form
-          });
+            const response = await api.post('/login', {
+                ...form
+            });
 
-          const { token, usuario } = response.data;
-          
-          setItem('token', token);
-          setItem('user', usuario.id)
+            const { token, usuario } = response.data;
 
-          if (token) {
-            setTimeout(() => {
-                navigate('/home')
-            }, 1500) 
-        }
+            setItem('token', token);
+            setItem('user', usuario.id)
+
+            if (token) {
+                setTimeout(() => {
+                    navigate('/home')
+                }, 1500)
+            }
 
         } catch (error) {
             setErro(error.response.data.mensagem)
@@ -46,7 +45,7 @@ function SignIn() {
 
     return (
         <div className='container'>
-            <div className='container-login' style={{backgroundImage: `url(${Background})`}}>
+            <div className='container-login' style={{ backgroundImage: `url(${Background})` }}>
                 <div className='container-content-login'>
                     <img src={Logo} alt='logo-mark' />
                     <div className='card-content'>
@@ -58,10 +57,10 @@ function SignIn() {
                         </h2>
                         <Link to='/sign-up'>
                             <button>
-                            Cadastre-se
+                                Cadastre-se
                             </button>
                         </Link>
-                        
+
                     </div>
                     <div className='card-login-sign-in'>
                         <form className='sign-in' onSubmit={handleSubmit}>
@@ -69,7 +68,7 @@ function SignIn() {
                             <div className='inputs'>
                                 <div className='input-email'>
                                     <label>E-mail</label>
-                                    <input 
+                                    <input
                                         name='email'
                                         type='text'
                                         value={form.email}
@@ -78,7 +77,7 @@ function SignIn() {
                                 </div>
                                 <div className='input-password'>
                                     <label>Password</label>
-                                    <input 
+                                    <input
                                         name='senha'
                                         type='password'
                                         value={form.senha}
@@ -87,10 +86,10 @@ function SignIn() {
                                 </div>
                             </div>
                             <button className='btn-confirm-sign-in'>Entrar</button>
-                            <span className='error' >{ erro && erro }</span>
+                            <span className='error' >{erro && erro}</span>
                         </form>
                     </div>
-                </div> 
+                </div>
             </div>
         </div>
     )
