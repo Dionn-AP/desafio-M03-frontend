@@ -1,0 +1,37 @@
+table {
+    min-width: 1030px;
+    text-align: center;
+}
+
+thead tr {
+    height: 50px;
+    box-shadow: 0px 2px 11px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+tbody tr {
+    height: 60px;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+tr td {
+    border-bottom: 1px solid #E0E0E0;
+}
+
+th button {
+    all: unset;
+    cursor: pointer;
+}
+
+.icons {
+    position: relative;
+}
+
+.icon-edit {
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.icon-trash{
+    cursor: pointer;
+}
