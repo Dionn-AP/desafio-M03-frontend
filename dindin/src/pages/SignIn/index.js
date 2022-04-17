@@ -1,10 +1,48 @@
 import './style.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Background from '../../assets/background.svg'
 import Logo from '../../assets/logo.svg';
+import { useEffect, useState } from 'react';
+import api from '../../services/api';
+import { setItem, getItem } from '../../utils/storage';
 
 
 function SignIn() {
+    const navigate = useNavigate();
+    const [ erro, setErro ] = useState('');
+    const [ form, setForm ] = useState({
+        email: '',
+        senha: ''
+    });
+
+    function handleChangeInputValue(e) {
+
+        setForm({...form, [e.target.name]: e.target.value})
+    }
+
+    async function handleSubmit(e) {
+        e.preventDefault();
+
+        try {
+          const response = await api.post('/login', {
+            ...form
+          });
+
+          const { token, usuario } = response.data;
+          
+          setItem('token', token);
+          setItem('user', usuario.id)
+
+          if (token) {
+            setTimeout(() => {
+                navigate('/home')
+            }, 1500) 
+        }
+
+        } catch (error) {
+            setErro(error.response.data.mensagem)
+        }
+    }
 
     return (
         <div className='container'>
@@ -25,28 +63,31 @@ function SignIn() {
                         </Link>
                         
                     </div>
-                    <div className='card-login'>
-                        <form>
+                    <div className='card-login-sign-in'>
+                        <form className='sign-in' onSubmit={handleSubmit}>
                             <h2>Login</h2>
                             <div className='inputs'>
                                 <div className='input-email'>
                                     <label>E-mail</label>
                                     <input 
+                                        name='email'
                                         type='text'
+                                        value={form.email}
+                                        onChange={handleChangeInputValue}
                                     />
                                 </div>
                                 <div className='input-password'>
                                     <label>Password</label>
                                     <input 
+                                        name='senha'
                                         type='password'
+                                        value={form.senha}
+                                        onChange={handleChangeInputValue}
                                     />
                                 </div>
                             </div>
-                            <button
-                                type='submit'
-                                >
-                                Entrar
-                            </button>
+                            <button className='btn-confirm-sign-in'>Entrar</button>
+                            <span className='error' >{ erro && erro }</span>
                         </form>
                     </div>
                 </div> 
