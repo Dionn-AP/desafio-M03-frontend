@@ -1,0 +1,62 @@
+.card-edit-user {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    background-color: #fff;
+    padding: 35px 55px;
+    max-height: 710px;
+    width: 450px;
+    border-radius: 10px;
+    font-family: 'Rubik', sans-serif;
+    font-style: normal;
+}
+
+.card-edit-user h1 {
+    color: #000;
+    margin-bottom: 20px;
+    justify-content: left;
+}
+
+.card-edit-user input {
+
+}
+
+.btn-confirm-edit-user {
+    all: unset;
+    background: #7978D9;
+    text-align: center;
+    width: 100px;
+    border-radius: 5px;
+    padding: 11px 47px;
+    margin-top: 20px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.card-edit-user label {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    color: #484848;
+    margin-bottom: 10px;
+}
+
+.btn-close {
+    position: absolute;
+    height: 27px;
+    top: 12px;
+    right: 14px;
+    cursor: pointer;
+}
+
+.error {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    margin-top: 5px;
+    color: red;
+}
